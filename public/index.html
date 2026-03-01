@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WallpaperHub — Wallpapers for Every Device</title>
+  <meta name="description" content="Find the perfect wallpapers for your phone, laptop, tablet, and monitor. Free collection of HD and 4K wallpapers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%237B2FF7'/><rect x='15' y='15' width='30' height='30' rx='6' fill='white' opacity='.9'/><rect x='55' y='15' width='30' height='30' rx='6' fill='white' opacity='.5'/><rect x='15' y='55' width='30' height='30' rx='6' fill='white' opacity='.5'/><rect x='55' y='55' width='30' height='30' rx='6' fill='white' opacity='.3'/></svg>" />
+</head>
+<body>
+  <!-- ═══ Loader ═══ -->
+  <div id="loader" class="loader">
+    <div class="loader-inner">
+      <div class="loader-ring"></div>
+      <span>WallpaperHub</span>
+    </div>
+  </div>
+
+  <!-- ═══ Header ═══ -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#logoGrad)" />
+            <rect x="6" y="6" width="9" height="9" rx="2" fill="white" opacity="0.9"/>
+            <rect x="17" y="6" width="9" height="9" rx="2" fill="white" opacity="0.6"/>
+            <rect x="6" y="17" width="9" height="9" rx="2" fill="white" opacity="0.6"/>
+            <rect x="17" y="17" width="9" height="9" rx="2" fill="white" opacity="0.3"/>
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32">
+                <stop stop-color="#7B2FF7"/>
+                <stop offset="1" stop-color="#FF006E"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="logo-text">Wallpaper<span class="logo-accent">Hub</span></span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#catalog" class="nav-link active" data-section="catalog">Catalog</a>
+        <a href="#categories" class="nav-link" data-section="categories">Categories</a>
+        <a href="#devices" class="nav-link" data-section="devices">Devices</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="search-box" id="searchBox">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          <input type="text" id="searchInput" placeholder="Search wallpapers..." autocomplete="off" />
+          <kbd class="search-kbd">/</kbd>
+        </div>
+        <button class="btn-icon mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ Hero ═══ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <canvas id="heroBgCanvas"></canvas>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge">Over 36 unique wallpapers</div>
+      <h1 class="hero-title">
+        Perfect wallpapers<br/>
+        <span class="gradient-text">for every device</span>
+      </h1>
+      <p class="hero-desc">
+        Find wallpapers for your phone, laptop, tablet, or monitor.
+        Professional design, HD and 4K quality. Completely free.
+      </p>
+      <div class="hero-actions">
+        <a href="#catalog" class="btn btn-primary btn-lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+            <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+          </svg>
+          Browse Catalog
+        </a>
+        <a href="#devices" class="btn btn-ghost btn-lg">
+          Choose Device
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">36+</span>
+          <span class="stat-label">Wallpapers</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">6</span>
+          <span class="stat-label">Categories</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">4</span>
+          <span class="stat-label">Devices</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">4K</span>
+          <span class="stat-label">Quality</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ═══ Device Selector ═══ -->
+  <section class="section" id="devices">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Devices</span>
+        <h2 class="section-title">Choose Your Device</h2>
+        <p class="section-desc">Wallpapers are automatically optimized for your selected device resolution</p>
+      </div>
+      <div class="devices-grid">
+        <button class="device-card active" data-device="phone">
+          <div class="device-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="5" y="2" width="14" height="20" rx="3"/>
+              <line x1="12" y1="18" x2="12" y2="18.01" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Phone</h3>
+          <span class="device-res">1080 × 1920</span>
+        </button>
+        <button class="device-card" data-device="laptop">
+          <div class="device-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <path d="M1 17h22" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Laptop</h3>
+          <span class="device-res">1920 × 1080</span>
+        </button>
+        <button class="device-card" data-device="tablet">
+          <div class="device-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="4" y="2" width="16" height="20" rx="3"/>
+              <line x1="12" y1="18" x2="12" y2="18.01" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Tablet</h3>
+          <span class="device-res">2048 × 1536</span>
+        </button>
+        <button class="device-card" data-device="desktop">
+          <div class="device-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <path d="M8 21h8M12 17v4"/>
+            </svg>
+          </div>
+          <h3>4K Monitor</h3>
+          <span class="device-res">3840 × 2160</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Categories ═══ -->
+  <section class="section section-alt" id="categories">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Categories</span>
+        <h2 class="section-title">Browse by Style</h2>
+        <p class="section-desc">Choose a style that matches your mood</p>
+      </div>
+      <div class="categories-grid">
+        <button class="category-card active" data-category="all">
+          <div class="category-preview cat-all"></div>
+          <span>All</span>
+          <span class="category-count" data-count="all">36</span>
+        </button>
+        <button class="category-card" data-category="gradients">
+          <div class="category-preview cat-gradients"></div>
+          <span>Gradients</span>
+          <span class="category-count" data-count="gradients">6</span>
+        </button>
+        <button class="category-card" data-category="abstract">
+          <div class="category-preview cat-abstract"></div>
+          <span>Abstract</span>
+          <span class="category-count" data-count="abstract">6</span>
+        </button>
+        <button class="category-card" data-category="space">
+          <div class="category-preview cat-space"></div>
+          <span>Space</span>
+          <span class="category-count" data-count="space">6</span>
+        </button>
+        <button class="category-card" data-category="nature">
+          <div class="category-preview cat-nature"></div>
+          <span>Nature</span>
+          <span class="category-count" data-count="nature">6</span>
+        </button>
+        <button class="category-card" data-category="minimal">
+          <div class="category-preview cat-minimal"></div>
+          <span>Minimal</span>
+          <span class="category-count" data-count="minimal">6</span>
+        </button>
+        <button class="category-card" data-category="dark">
+          <div class="category-preview cat-dark"></div>
+          <span>Dark</span>
+          <span class="category-count" data-count="dark">6</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Catalog / Gallery ═══ -->
+  <section class="section" id="catalog">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Collection</span>
+        <h2 class="section-title">Wallpaper Catalog</h2>
+        <p class="section-desc">Click on a wallpaper to preview and download</p>
+      </div>
+      <div class="catalog-toolbar">
+        <div class="toolbar-left">
+          <span class="results-count" id="resultsCount">Showing: 36 wallpapers</span>
+        </div>
+        <div class="toolbar-right">
+          <div class="view-toggle">
+            <button class="view-btn active" data-view="grid" aria-label="Grid view">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+              </svg>
+            </button>
+            <button class="view-btn" data-view="large" aria-label="Large view">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="8" rx="1"/><rect x="3" y="13" width="18" height="8" rx="1"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="gallery" id="gallery">
+        <!-- Filled by JS -->
+      </div>
+      <div class="no-results" id="noResults" style="display:none;">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <h3>No results found</h3>
+        <p>Try adjusting your search or selecting a different category</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Modal Preview ═══ -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6 6 18M6 6l12 12"/>
+        </svg>
+      </button>
+      <div class="modal-body">
+        <div class="modal-preview">
+          <canvas id="modalCanvas"></canvas>
+        </div>
+        <div class="modal-info">
+          <h2 id="modalTitle" class="modal-title"></h2>
+          <div class="modal-meta">
+            <span class="modal-category" id="modalCategory"></span>
+            <span class="modal-size" id="modalSize"></span>
+          </div>
+          <div class="modal-tags" id="modalTags"></div>
+          <div class="modal-colors" id="modalColors"></div>
+          
+          <div class="modal-device-select">
+            <label>Resolution for device:</label>
+            <div class="modal-devices" id="modalDevices">
+              <button class="modal-device-btn active" data-res="1080x1920">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="5" y="2" width="14" height="20" rx="3"/>
+                </svg>
+                Phone
+              </button>
+              <button class="modal-device-btn" data-res="1920x1080">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M1 17h22"/>
+                </svg>
+                Laptop
+              </button>
+              <button class="modal-device-btn" data-res="2048x1536">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="2" width="16" height="20" rx="3"/>
+                </svg>
+                Tablet
+              </button>
+              <button class="modal-device-btn" data-res="3840x2160">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+                </svg>
+                4K
+              </button>
+            </div>
+          </div>
+          
+          <button class="btn btn-primary btn-lg btn-download" id="downloadBtn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7,10 12,15 17,10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download Wallpaper
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ Footer ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-text">Wallpaper<span class="logo-accent">Hub</span></span>
+          <p>Free professional wallpapers for all devices</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Categories</h4>
+            <a href="#" data-filter-cat="gradients">Gradients</a>
+            <a href="#" data-filter-cat="abstract">Abstract</a>
+            <a href="#" data-filter-cat="space">Space</a>
+          </div>
+          <div class="footer-col">
+            <h4>&nbsp;</h4>
+            <a href="#" data-filter-cat="nature">Nature</a>
+            <a href="#" data-filter-cat="minimal">Minimal</a>
+            <a href="#" data-filter-cat="dark">Dark</a>
+          </div>
+          <div class="footer-col">
+            <h4>Devices</h4>
+            <a href="#devices">Phone</a>
+            <a href="#devices">Laptop</a>
+            <a href="#devices">Tablet</a>
+            <a href="#devices">4K Monitor</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 WallpaperHub. All wallpapers are free for personal use.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ Mobile Menu ═══ -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-content">
+      <a href="#catalog" class="mobile-link">Catalog</a>
+      <a href="#categories" class="mobile-link">Categories</a>
+      <a href="#devices" class="mobile-link">Devices</a>
+    </div>
+  </div>
+
+  <script src="/js/wallpapers.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
